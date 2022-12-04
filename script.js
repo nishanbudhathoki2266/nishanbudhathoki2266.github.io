@@ -38,6 +38,9 @@ const switchPlayers = () => {
 
 // Rolling a dice
 btnRoll.addEventListener('click', () => {
+
+    if (!playingEnabled) return alert('Start a new Game!');
+
     if (playingEnabled) {
         // Generate a random dice roll
         const dice = Math.trunc(Math.random() * 6) + 1;
@@ -61,6 +64,7 @@ btnRoll.addEventListener('click', () => {
 
 // Function for handling the scores hold
 const holdScores = (player) => {
+    if (!playingEnabled) return alert('Start a new Game!');
 
     const playerScoreEL = player === 1 ? playerOneScoreEL : playerTwoScoreEL;
     const playerEL = player === 1 ? playerOneEL : playerTwoEL;
@@ -75,7 +79,6 @@ const holdScores = (player) => {
     else {
         playerEL.classList.add('player--winner');
         playingEnabled = false;
-
     }
 }
 
