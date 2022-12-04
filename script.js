@@ -40,7 +40,6 @@ const switchPlayers = () => {
 btnRoll.addEventListener('click', () => {
 
     if (!playingEnabled) return alert('Start a new Game!');
-
     if (playingEnabled) {
         // Generate a random dice roll
         const dice = Math.trunc(Math.random() * 6) + 1;
